@@ -14,3 +14,9 @@
  *= require_self
  *= require fullcalendar
  */
+ul {
+	list-style-type: none;
+}
+li {
+	display: inline;
+}
