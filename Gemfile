@@ -5,6 +5,7 @@ gem 'momentjs-rails'
 gem 'devise'
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
+gem 'datetimepicker-rails', '>= 3.0.0', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git', :branch => 'tarruda'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record

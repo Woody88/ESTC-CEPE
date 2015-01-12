@@ -9,7 +9,58 @@
 <body>
 	<!--<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>-->
-<%= yield %>
+	<% if user_signed_in? %>
+		  <div id="wrapper">
 
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                    Welcome, <%=current_user.fname %>
+                    </a><small><%= link_to('(Logout)', destroy_user_session_path, :method => :delete) %></small>
+                </li>
+                <li>
+                   <%= link_to 'Calendar', calendar_path %>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                       <%= yield %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+        		
+	<% else %>
+		<%= yield %>
+	<% end %>
 </body>
 </html>

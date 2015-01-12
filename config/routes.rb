@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+  resources :shifts
+
   root 'staticpages#home'
+  get 'workspace' => 'staticpages#workspace'
+  get 'calendar' => 'staticpages#calendar'
 
-  get 'staticpages/calendar'
-
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
